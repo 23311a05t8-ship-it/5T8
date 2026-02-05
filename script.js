@@ -1,25 +1,33 @@
-const toggleBtn = document.getElementById('theme-toggle');
-const storageMsg = document.getElementById('storage-msg');
-
-// 1. Check Local Storage on load
-const currentTheme = localStorage.getItem('theme');
-
-if (currentTheme === 'dark') {
-    document.body.classList.add('dark-mode');
-    storageMsg.innerText = "Status: Dark Mode (Loaded from LocalStorage)";
-} else {
-    storageMsg.innerText = "Status: Light Mode (Default)";
-}
-
-// 2. Event Listener for the button
-toggleBtn.addEventListener('click', () => {
-    document.body.classList.toggle('dark-mode');
-    
-    // Determine the current state
-    const isDark = document.body.classList.contains('dark-mode');
-    const theme = isDark ? 'dark' : 'light';
-
-    // 3. Save to Web Storage
-    localStorage.setItem('theme', theme);
-    storageMsg.innerText = `Preference updated: ${theme} mode saved to API`;
-});
+function detectDevice() {
+    var deviceTypeElement = document.getElementById("deviceType");
+    var featureList = document.getElementById("featureList");
+  
+    const featureClass =
+      "bg-white p-5 border rounded flex-1";
+  
+    if (window.innerWidth < 768) {
+      deviceTypeElement.textContent = "You are using a mobile device.";
+      featureList.innerHTML = `
+        <div class="${featureClass}">Mobile Feature 1</div>
+        <div class="${featureClass}">Mobile Feature 2</div>
+      `;
+    } else if (window.innerWidth < 1024) {
+      deviceTypeElement.textContent = "You are using a tablet.";
+      featureList.innerHTML = `
+        <div class="${featureClass}">Tablet Feature 1</div>
+        <div class="${featureClass}">Tablet Feature 2</div>
+        <div class="${featureClass}">Tablet Feature 3</div>
+      `;
+    } else {
+      deviceTypeElement.textContent = "You are using a desktop.";
+      featureList.innerHTML = `
+        <div class="${featureClass}">Desktop Feature 1</div>
+        <div class="${featureClass}">Desktop Feature 2</div>
+        <div class="${featureClass}">Desktop Feature 3</div>
+        <div class="${featureClass}">Desktop Feature 4</div>
+      `;
+    }
+  }
+  
+  window.onload = detectDevice;
+  window.onresize = detectDevice;

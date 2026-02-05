@@ -1,41 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Semantic Elements & Web Storage API</title>
-    <link rel="stylesheet" href="styles.css">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="script.js" defer></script> 
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Adaptive Landing Page</title>
+  <!-- Compiled Tailwind CSS -->
+  <link rel="stylesheet" href="output.css">
 </head>
-<body >
-    <header>
-        <h1>Semantic Elements, Media Queries, CSS3 and Web Storage API</h1>
-        <button id="theme-toggle" class="mt-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">Switch Theme</button>
-    </header>
-    <main>
-        <article class="w-full border-t-8 border-cyan-400 shadow-lg rounded p-4 mb-6">
-            <h2>CSE E</h2>
-            <p>Bachelor of Technology, SNIST</p>
-        </article>
-        <section id="summary">
-            <h3>Professional Summary</h3>
-            <p>An Eight semesters degree program</p>
-        </section>
-        <section id="expertise">
-            <h3>Core Expertise</h3>
-            <ul class="list-disc pl-5">
-                <li>C and Data Structures</li> <li>Python</li>
-                <li>Java</li>
-                <li>AI and ML</li>
-                <li>Fullstack - React</li>
-            </ul>
-        </section>
-        <aside class="storage-status">
-            <strong>Web Storage API Note:</strong>
-            <p id="storage-msg">Setting theme...</p>
-        </aside>
-    </main>
-    <footer>&copy; 2026 WT LAB - Semantic Elements</footer>
+
+<body class="bg-gray-100">
+
+  <!-- Header -->
+  <header class="bg-[lightcoral] text-white p-5 text-center">
+    <h1 class="text-3xl font-bold">Welcome to Our Service</h1>
+    <p id="deviceType" class="mt-2"></p>
+  </header>
+
+  <!-- Main -->
+  <main class="p-5">
+
+    <!-- Hero Section -->
+    <section id="hero" class="text-center mb-5 lg:text-left">
+      <h2 id="heroTitle" class="text-2xl lg:text-4xl font-semibold mb-2">
+        Discover Our Solutions
+      </h2>
+      <p id="heroDescription" class="text-lg lg:text-xl">
+        We provide top-notch solutions tailored to your needs.
+      </p>
+    </section>
+
+    <!-- Features -->
+    <section id="features" class="mb-5">
+      <h2 class="text-2xl font-semibold mb-3">Features</h2>
+      <div id="featureList" class="flex flex-wrap gap-4">
+        <!-- Features injected by JS -->
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+      <h2 class="text-2xl font-semibold mb-2">Contact Us</h2>
+      <p class="mb-3">Get in touch with us for more information.</p>
+
+      <form id="contactForm" class="flex flex-col">
+        <label class="mt-2">Name:</label>
+        <input type="text" class="mt-1 p-2 border rounded" required />
+
+        <label class="mt-2">Email:</label>
+        <input type="email" class="mt-1 p-2 border rounded" required />
+
+        <label class="mt-2">Message:</label>
+        <textarea rows="4" class="mt-1 p-2 border rounded" required></textarea>
+
+        <button
+          type="submit"
+          class="mt-3 bg-[lightcoral] text-white px-5 py-2 rounded hover:bg-red-800 transition"
+        >
+          Send Message
+        </button>
+      </form>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="text-center p-3 bg-gray-800 text-white">
+    <p>&copy; 2024 Our Service</p>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
